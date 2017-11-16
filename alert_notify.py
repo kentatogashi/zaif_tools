@@ -45,8 +45,10 @@ class ZaifAlert(object):
         s.sendmail(self.from_addr, [self.to_addr], msg.as_string())
         s.close()
 
-while True:
+if __name__ == '__main__':
     pair = 'xem_jpy'
     zaif = ZaifAlert(pair)
-    zaif.check()
-    time.sleep(60)
+
+    while True:
+        zaif.check()
+        time.sleep(60)
